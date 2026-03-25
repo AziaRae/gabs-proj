@@ -50,3 +50,16 @@ class View:
         print(f"Here are some suggested items to remove: ")
         for index, item in zip(index_of_item_to_remove, items_to_remove):
             print(f"[{index}] {item.name} costing {item.price} under {item.category}")
+
+    def prompt_action(self) -> str:
+        action: str = input(
+            f"""\n[A] Provide Item, Price, and Category
+[B] Delete Item
+[C] Sort From Least Expensive to Most Expensive
+[D] Sort From Most Expensive to Least Expensive
+[E] Stop Shopping
+> """
+        )
+        action = action.upper()
+
+        return action

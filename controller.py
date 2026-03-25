@@ -9,18 +9,7 @@ class Controller:
         self._model = model
         self._view = view
 
-    def prompt_action(self) -> str:
-        action: str = input(
-            f"""\n[A] Provide Item, Price, and Category
-[B] Delete Item
-[C] Sort From Least Expensive to Most Expensive
-[D] Sort From Most Expensive to Least Expensive
-[E] Stop Shopping
-> """
-        )
-        action = action.upper()
 
-        return action
 
     def run(self):
         model = self._model
@@ -45,7 +34,7 @@ class Controller:
             view.display_remaining(model.remaining)
             view.display_cart(model.items)
 
-            action: str = self.prompt_action()
+            action: str = view.prompt_action()
 
             match action:
                 case "A":
