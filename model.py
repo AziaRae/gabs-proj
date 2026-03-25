@@ -120,7 +120,7 @@ class Model:
             )
             total_deduction = sum(item.price for item in potential_items)
 
-            if total_deduction > target_deduction:
+            if total_deduction >= target_deduction:
                 potential_items_to_remove[potential_items] = total_deduction
 
         items_to_remove: tuple[Item, ...] = tuple()
