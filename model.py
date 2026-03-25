@@ -125,7 +125,7 @@ class Model:
 
         items_to_remove: tuple[Item, ...] = tuple()
 
-        min: float = 10e8 + 1
+        min: float = 1 << 128
 
         for potential in potential_items_to_remove:
             to_deduct: float = potential_items_to_remove[potential]
