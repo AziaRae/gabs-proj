@@ -9,8 +9,6 @@ class Controller:
         self._model = model
         self._view = view
 
-
-
     def run(self):
         model = self._model
         view = self._view
